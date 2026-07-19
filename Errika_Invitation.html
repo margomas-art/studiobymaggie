@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Πρόσκληση — Τα 6α Γενέθλια της Έρρικα</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf6fb;
+    --cream-deep:#f3e9f6;
+    --gold:#c79a3d;
+    --gold-light:#e8c877;
+    --silver:#d8d6e0;
+    --ink:#4a3960;
+    --pink:#e08bab;
+    --pink-light:#f7d8e6;
+    --pink-deep:#c96a8c;
+    --purple:#9068b0;
+    --purple-light:#dcc3ee;
+    --lavender:#b48fd6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:20px 14px 60px;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 3%),
+      radial-gradient(circle at 82% 12%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 2.5%),
+      radial-gradient(circle at 70% 80%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 2.5%),
+      radial-gradient(circle at 25% 85%, rgba(232,200,119,0.5) 0%, rgba(232,200,119,0) 3%),
+      radial-gradient(circle at 90% 55%, rgba(180,143,214,0.4) 0%, rgba(180,143,214,0) 3%),
+      radial-gradient(circle at 8% 60%, rgba(224,139,171,0.4) 0%, rgba(224,139,171,0) 3%),
+      radial-gradient(circle at top, #fffdfb 0%, var(--cream) 45%, var(--cream-deep) 100%);
+    font-family:'Quicksand', sans-serif;
+    color:var(--ink);
+  }
+  .stage{
+    max-width:460px;
+    width:100%;
+    margin:0 auto;
+    position:relative;
+    padding-top:66px;
+  }
+
+  /* ---------- floating balloons ---------- */
+  @keyframes floatY{ 0%,100%{ transform:translateY(0) rotate(-2deg); } 50%{ transform:translateY(-10px) rotate(2deg); } }
+  .balloon-cluster{ position:absolute; z-index:0; pointer-events:none; }
+  .balloon-cluster.tl{ top:0; left:-6px; width:110px; height:100px; }
+  .balloon-cluster.tr{ top:-4px; right:-8px; width:110px; height:100px; }
+  .bln{
+    position:absolute;
+    border-radius:50%;
+    animation:floatY 4.5s ease-in-out infinite;
+    box-shadow:0 6px 14px rgba(90,60,110,0.18);
+  }
+  .bln::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:100%;
+    width:1px;
+    height:22px;
+    background:linear-gradient(to bottom, rgba(120,90,60,0.3), transparent);
+  }
+  .bln.lav{ background:radial-gradient(circle at 30% 26%, #f4e9fb, var(--lavender) 55%, var(--purple) 100%); }
+  .bln.pink{ background:radial-gradient(circle at 30% 26%, #fdeaf1, var(--pink) 55%, var(--pink-deep) 100%); }
+  .bln.gold{ background:radial-gradient(circle at 30% 26%, #fdf3d9, var(--gold-light) 55%, var(--gold) 100%); }
+
+  /* ---------- confetti + twinkles ---------- */
+  .confetti{ position:absolute; inset:0; z-index:0; pointer-events:none; overflow:visible; }
+  .confetti span{ position:absolute; width:7px; height:11px; border-radius:2px; opacity:0.7; }
+  @keyframes twinkle{ 0%,100%{ opacity:0.25; transform:scale(0.7); } 50%{ opacity:1; transform:scale(1.15); } }
+  .twinkles{ position:absolute; inset:0; z-index:0; pointer-events:none; }
+  .twinkles span{ position:absolute; font-size:12px; color:var(--gold-light); animation:twinkle 2.6s ease-in-out infinite; }
+
+  /* ---------- card ---------- */
+  .card{
+    background:linear-gradient(160deg, #fffdfb 0%, #fdf9ff 100%);
+    border-radius:22px;
+    padding:42px 22px 32px;
+    position:relative;
+    z-index:1;
+    box-shadow:0 24px 50px rgba(144,104,176,0.22), 0 8px 24px rgba(224,139,171,0.16), 0 2px 8px rgba(0,0,0,0.05);
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:2px;
+    border-radius:22px;
+    background:linear-gradient(135deg, var(--gold-light), var(--silver) 35%, var(--lavender) 65%, var(--pink) 100%);
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor;
+    mask-composite:exclude;
+    pointer-events:none;
+  }
+  .sparkle-num{ text-align:center; margin:2px 0 4px; }
+  @keyframes glowPulse{ 0%,100%{ text-shadow:0 0 16px rgba(199,154,61,0.35); } 50%{ text-shadow:0 0 30px rgba(199,154,61,0.65); } }
+  .sparkle-num .six{
+    font-family:'Playfair Display', serif;
+    font-weight:900;
+    font-size:72px;
+    line-height:1;
+    background:linear-gradient(160deg, #f6ecff 0%, var(--lavender) 45%, var(--purple) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    -webkit-text-stroke:1.5px rgba(255,255,255,0.9);
+    animation:glowPulse 3s ease-in-out infinite;
+    display:inline-block;
+    padding:0 6px;
+  }
+  .sparkle-num .spark{ font-size:17px; vertical-align:middle; opacity:0.9; }
+  .flourish{ text-align:center; font-size:15px; letter-spacing:5px; margin-bottom:8px; }
+  .flourish span:nth-child(1){ color:var(--pink); }
+  .flourish span:nth-child(2){ color:var(--gold); }
+  .flourish span:nth-child(3){ color:var(--purple); }
+  .eyebrow{
+    text-align:center;
+    text-transform:uppercase;
+    letter-spacing:3.5px;
+    font-size:12px;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    text-align:center;
+    font-size:clamp(38px, 11vw, 54px);
+    margin:0 0 6px;
+    color:var(--ink);
+    line-height:1.08;
+  }
+  @keyframes shine{ to{ background-position:-200% center; } }
+  h1 span{
+    font-style:normal;
+    font-weight:700;
+    background:linear-gradient(120deg, #f6e3ae 10%, var(--gold-light) 30%, #fff8e6 50%, var(--gold) 70%, #a97c25 90%);
+    background-size:220% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:shine 4.5s linear infinite;
+  }
+  .subtitle{
+    text-align:center;
+    font-size:17.5px;
+    font-weight:600;
+    color:var(--purple);
+    margin-bottom:22px;
+  }
+  .divider{
+    width:90px;
+    height:3px;
+    background:linear-gradient(90deg, var(--pink), var(--gold), var(--purple));
+    margin:0 auto 24px;
+    border-radius:2px;
+  }
+  .rule-orn{ display:flex; align-items:center; justify-content:center; gap:10px; margin:0 0 14px; }
+  .rule-orn .line{ width:34px; height:1px; background:linear-gradient(90deg, transparent, var(--gold-light)); }
+  .rule-orn .line.r{ background:linear-gradient(90deg, var(--gold-light), transparent); }
+  .rule-orn .diamond{ color:var(--gold); font-size:11px; }
+  .mantinada{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(13px, 3.9vw, 17px);
+    line-height:1.6;
+    letter-spacing:-0.1px;
+    text-align:center;
+    color:#5a3e1f;
+    padding:0 2px;
+    margin:0 -14px 10px;
+    white-space:normal;
+  }
+  .mantinada .ln{ display:block; }
+  .mantinada .q{ color:var(--gold); font-family:Georgia, serif; font-style:normal; font-size:1.5em; }
+  .video-label{
+    text-align:center;
+    font-weight:700;
+    font-size:16px;
+    color:var(--ink);
+    margin:26px 0 14px;
+  }
+  .video-frame{
+    position:relative;
+    max-width:250px;
+    margin:0 auto 8px;
+    padding:4px;
+    border-radius:20px;
+    background:linear-gradient(155deg, var(--gold-light), var(--lavender) 45%, var(--pink) 100%);
+    box-shadow:0 14px 30px rgba(144,104,176,0.28), 0 4px 14px rgba(224,139,171,0.18);
+  }
+  .video-frame video{
+    display:block;
+    width:100%;
+    aspect-ratio:9/16;
+    object-fit:cover;
+    border-radius:16px;
+    background:#1a1420;
+  }
+  .video-frame .vspark{
+    position:absolute;
+    font-size:18px;
+    filter:drop-shadow(0 0 4px rgba(255,255,255,0.8));
+  }
+  .video-frame .vspark.tl{ top:-10px; left:-10px; color:var(--gold); }
+  .video-frame .vspark.tr{ top:-10px; right:-10px; color:var(--pink); }
+  .video-frame .vspark.bl{ bottom:-10px; left:-10px; color:var(--purple); }
+  .video-frame .vspark.br{ bottom:-10px; right:-10px; color:var(--gold); }
+  .video-caption{
+    text-align:center;
+    font-size:13px;
+    font-weight:600;
+    color:var(--purple);
+    margin:12px 0 24px;
+  }
+  .details{
+    background:linear-gradient(135deg, var(--cream), var(--pink-light) 140%);
+    border:1px solid var(--gold-light);
+    border-radius:14px;
+    padding:20px 20px 18px;
+    margin-bottom:20px;
+  }
+  .detail-row{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:12px;
+    font-size:15.5px;
+  }
+  .detail-row:last-child{ margin-bottom:0; }
+  .detail-icon{ font-size:18px; width:22px; text-align:center; }
+  .detail-text b{ display:block; font-size:15.5px; }
+  .detail-text .fine{ font-size:13px; color:var(--purple); margin-top:1px; }
+  .map-btn{
+    display:block;
+    text-align:center;
+    margin:16px auto 0;
+    background:linear-gradient(135deg, var(--gold), var(--pink));
+    color:#fff !important;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14.5px;
+    padding:12px 18px;
+    border-radius:30px;
+    letter-spacing:0.3px;
+  }
+  .rsvp{
+    text-align:center;
+    font-size:14px;
+    color:var(--ink);
+    line-height:1.6;
+    margin-bottom:18px;
+  }
+  .rsvp b{ color:var(--purple); }
+  .signoff{
+    text-align:center;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:19px;
+    font-weight:600;
+    color:var(--ink);
+  }
+  .bottom-flourish{
+    text-align:center;
+    margin-top:10px;
+    font-size:14px;
+    letter-spacing:3px;
+  }
+  .bottom-flourish span:nth-child(1){ color:var(--purple); }
+  .bottom-flourish span:nth-child(2){ color:var(--gold); }
+  .bottom-flourish span:nth-child(3){ color:var(--pink); }
+
+  /* ---------- ambient falling gold/pink/purple confetti + sparkles ---------- */
+  .fx-fall{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:6;
+  }
+  .fx-fall .p{
+    position:absolute;
+    top:-6%;
+    left:var(--x);
+    opacity:0;
+    animation:fx-fall linear infinite;
+    animation-duration:var(--d);
+    animation-delay:var(--t);
+  }
+  .fx-fall .p.dot{
+    width:var(--s);
+    height:var(--s);
+    border-radius:50%;
+    background:var(--c);
+    box-shadow:0 0 5px rgba(255,255,255,0.6);
+  }
+  .fx-fall .p.rect{
+    width:var(--s);
+    height:calc(var(--s) * 1.7);
+    border-radius:1.5px;
+    background:var(--c);
+  }
+  .fx-fall .p.star{
+    font-size:var(--s);
+    color:var(--c);
+    filter:drop-shadow(0 0 3px rgba(255,255,255,0.7));
+  }
+  @keyframes fx-fall{
+    0%{ transform:translateY(0) translateX(0) rotate(0deg); opacity:0; }
+    6%{ opacity:0.95; }
+    50%{ transform:translateY(58vh) translateX(16px) rotate(190deg); }
+    90%{ opacity:0.9; }
+    100%{ transform:translateY(112vh) translateX(-12px) rotate(360deg); opacity:0; }
+  }
+
+  /* ---------- flying balloons drifting up across the whole page ---------- */
+  .fx-balloons{ position:fixed; inset:0; overflow:hidden; pointer-events:none; z-index:7; }
+  .fb{
+    position:absolute;
+    bottom:-18%;
+    left:var(--x);
+    width:var(--s);
+    height:var(--s);
+    border-radius:50%;
+    animation:fb-rise linear infinite;
+    animation-duration:var(--d);
+    animation-delay:var(--t);
+    opacity:0;
+  }
+  .fb::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:100%;
+    width:1px;
+    height:30px;
+    background:linear-gradient(to bottom, rgba(120,90,60,0.35), transparent);
+  }
+  .fb.lav{ background:radial-gradient(circle at 30% 26%, #f4e9fb, var(--lavender) 55%, var(--purple) 100%); box-shadow:0 10px 22px rgba(90,60,110,0.22); }
+  .fb.pink{ background:radial-gradient(circle at 30% 26%, #fdeaf1, var(--pink) 55%, var(--pink-deep) 100%); box-shadow:0 10px 22px rgba(90,60,110,0.22); }
+  .fb.gold{ background:radial-gradient(circle at 30% 26%, #fdf3d9, var(--gold-light) 55%, var(--gold) 100%); box-shadow:0 10px 22px rgba(90,60,110,0.22); }
+  @keyframes fb-rise{
+    0%{ transform:translateY(0) translateX(0) rotate(-3deg); opacity:0; }
+    8%{ opacity:0.95; }
+    50%{ transform:translateY(-55vh) translateX(26px) rotate(3deg); }
+    92%{ opacity:0.9; }
+    100%{ transform:translateY(-120vh) translateX(-20px) rotate(-3deg); opacity:0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="fx-fall">
+  <span class="p rect" style="--x:4%;  --s:6px;  --c:var(--gold-light); --d:9s;  --t:0s;"></span>
+  <span class="p dot"  style="--x:12%; --s:5px;  --c:var(--pink);       --d:11s; --t:1.4s;"></span>
+  <span class="p star" style="--x:20%; --s:12px; --c:var(--gold);"  >&#10022;</span>
+  <span class="p rect" style="--x:28%; --s:5px;  --c:var(--purple);     --d:8s;  --t:2.6s;"></span>
+  <span class="p dot"  style="--x:36%; --s:6px;  --c:var(--gold-light); --d:10s; --t:0.8s;"></span>
+  <span class="p star" style="--x:44%; --s:10px; --c:var(--lavender);  --d:12s; --t:3.4s;">&#10022;</span>
+  <span class="p rect" style="--x:52%; --s:6px;  --c:var(--pink);      --d:9.5s;--t:1.9s;"></span>
+  <span class="p dot"  style="--x:60%; --s:5px;  --c:var(--gold);      --d:8.5s;--t:4.1s;"></span>
+  <span class="p star" style="--x:68%; --s:13px; --c:var(--gold-light);--d:11s; --t:0.3s;">&#10022;</span>
+  <span class="p rect" style="--x:76%; --s:5px;  --c:var(--lavender);  --d:10.5s;--t:2.2s;"></span>
+  <span class="p dot"  style="--x:84%; --s:6px;  --c:var(--pink);      --d:9s;  --t:3.7s;"></span>
+  <span class="p star" style="--x:91%; --s:11px; --c:var(--purple);    --d:12.5s;--t:1.1s;">&#10022;</span>
+  <span class="p dot"  style="--x:8%;  --s:4px;  --c:var(--purple);    --d:13s; --t:5.2s;"></span>
+  <span class="p rect" style="--x:96%; --s:5px;  --c:var(--gold);      --d:9.8s;--t:4.6s;"></span>
+  <span class="p star" style="--x:56%; --s:9px;  --c:var(--pink);      --d:10s; --t:5.8s;">&#10022;</span>
+  <span class="p dot"  style="--x:32%; --s:5px;  --c:var(--gold-light);--d:11.5s;--t:6.3s;"></span>
+</div>
+
+<div class="fx-balloons">
+  <span class="fb lav"  style="--x:12%; --s:48px; --d:17s; --t:0.5s;"></span>
+  <span class="fb pink" style="--x:72%; --s:38px; --d:20s; --t:6s;"></span>
+  <span class="fb gold" style="--x:42%; --s:32px; --d:23s; --t:12s;"></span>
+</div>
+
+<div class="stage">
+
+  <div class="balloon-cluster tl">
+    <span class="bln lav" style="width:56px;height:56px;left:2px;top:20px;animation-delay:0s;"></span>
+    <span class="bln pink" style="width:40px;height:40px;left:38px;top:0;animation-delay:0.5s;"></span>
+    <span class="bln gold" style="width:28px;height:28px;left:64px;top:26px;animation-delay:1s;"></span>
+  </div>
+  <div class="balloon-cluster tr">
+    <span class="bln pink" style="width:52px;height:52px;right:2px;top:16px;animation-delay:0.3s;"></span>
+    <span class="bln lav" style="width:38px;height:38px;right:36px;top:0;animation-delay:0.9s;"></span>
+    <span class="bln gold" style="width:26px;height:26px;right:60px;top:22px;animation-delay:1.4s;"></span>
+  </div>
+
+  <div class="confetti">
+    <span style="left:6%; top:34px; background:var(--gold-light); transform:rotate(18deg);"></span>
+    <span style="left:16%; top:88px; background:var(--purple); transform:rotate(-12deg);"></span>
+    <span style="left:88%; top:40px; background:var(--pink); transform:rotate(24deg);"></span>
+    <span style="left:80%; top:96px; background:var(--gold); transform:rotate(-20deg);"></span>
+    <span style="left:50%; top:14px; background:var(--lavender); transform:rotate(8deg);"></span>
+    <span style="left:10%; top:150px; background:var(--pink); transform:rotate(-30deg);"></span>
+    <span style="left:92%; top:150px; background:var(--purple); transform:rotate(16deg);"></span>
+  </div>
+
+  <div class="twinkles">
+    <span style="left:20%; top:6px; animation-delay:0s;">✨</span>
+    <span style="left:74%; top:60px; animation-delay:0.6s;">✨</span>
+    <span style="left:4%; top:110px; animation-delay:1.1s;">✨</span>
+    <span style="left:95%; top:20px; animation-delay:1.6s;">✨</span>
+    <span style="left:44%; top:44px; animation-delay:0.9s;">✨</span>
+  </div>
+
+  <div class="card">
+    <div class="flourish"><span>✨</span> <span>✨</span> <span>✨</span></div>
+    <div class="eyebrow">Πρόσκληση Γενεθλίων</div>
+    <div class="sparkle-num"><span class="spark">✨</span><span class="six">6</span><span class="spark">✨</span></div>
+    <h1>Η <span>Έρρικα</span> κλείνει 6!</h1>
+    <div class="subtitle">Ελάτε να γιορτάσουμε μαζί! 🎈</div>
+    <div class="divider"></div>
+
+    <div class="rule-orn"><span class="line"></span><span class="diamond">◆</span><span class="line r"></span></div>
+    <p class="mantinada">
+      <span class="ln"><span class="q">„</span>Όσα λουλούδια ανθίζουνε την άνοιξη στην Κρήτη,</span>
+      <span class="ln">τόσες χαρές σου εύχομαι, αστέρι του Ψηλορείτη.<span class="q">‟</span></span>
+    </p>
+
+    <div class="video-label">🎬 Δες την πρόσκληση της Έρρικας!</div>
+    <div class="video-frame">
+      <span class="vspark tl">✨</span>
+      <span class="vspark tr">✨</span>
+      <video controls playsinline preload="metadata" poster="errika_video_poster.jpg">
+        <source src="errika_invitation_video.mp4" type="video/mp4">
+      </video>
+      <span class="vspark bl">✨</span>
+      <span class="vspark br">✨</span>
+    </div>
+    <div class="video-caption">Πάτησε play ▶</div>
+
+    <div class="details">
+      <div class="detail-row">
+        <span class="detail-icon">📅</span>
+        <span class="detail-text"><b>Σάββατο, 19 Σεπτεμβρίου</b></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">🕡</span>
+        <span class="detail-text"><b>18:30</b></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-icon">📍</span>
+        <span class="detail-text">
+          <b>Αθλούπολη</b>
+          <span class="fine">Θέση Μπαθαρίστρα, Δήμος Κορινθίων</span>
+        </span>
+      </div>
+      <a class="map-btn" href="https://maps.app.goo.gl/say9prxjCRYojgTZ8" target="_blank" rel="noopener">🗺️ Οδηγίες προς την Αθλούπολη</a>
+    </div>
+
+    <p class="rsvp">Επιβεβαιώστε τη συμμετοχή σας στη Μαριέλλα: <b>6981 013 342</b> 💛</p>
+
+    <p class="signoff">Σας περιμένουμε με λαχτάρα!</p>
+    <div class="bottom-flourish"><span>✨</span> <span>✨</span> <span>✨</span></div>
+  </div>
+</div>
+
+</body>
+</html>
