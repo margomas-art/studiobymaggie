@@ -23,19 +23,36 @@
     --lavender:#b48fd6;
   }
   *{box-sizing:border-box;}
+  html,body{ min-height:100%; }
   body{
     margin:0;
     padding:20px 14px 60px;
-    background:
-      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 3%),
-      radial-gradient(circle at 82% 12%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 2.5%),
-      radial-gradient(circle at 70% 80%, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0) 2.5%),
-      radial-gradient(circle at 25% 85%, rgba(232,200,119,0.5) 0%, rgba(232,200,119,0) 3%),
-      radial-gradient(circle at 90% 55%, rgba(180,143,214,0.4) 0%, rgba(180,143,214,0) 3%),
-      radial-gradient(circle at 8% 60%, rgba(224,139,171,0.4) 0%, rgba(224,139,171,0) 3%),
-      radial-gradient(circle at top, #fffdfb 0%, var(--cream) 45%, var(--cream-deep) 100%);
     font-family:'Quicksand', sans-serif;
     color:var(--ink);
+    position:relative;
+  }
+  .bg-photo{
+    position:fixed;
+    inset:-4%;
+    z-index:-3;
+    background-image:url('errika_photo.jpg');
+    background-size:cover;
+    background-position:center 18%;
+    filter:blur(9px) brightness(1.04) saturate(1.05);
+    transform:scale(1.06);
+  }
+  .bg-wash{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0) 5%),
+      radial-gradient(circle at 82% 12%, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0) 4%),
+      radial-gradient(circle at 70% 80%, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 4%),
+      radial-gradient(circle at 25% 85%, rgba(232,200,119,0.45) 0%, rgba(232,200,119,0) 5%),
+      radial-gradient(circle at 90% 55%, rgba(180,143,214,0.4) 0%, rgba(180,143,214,0) 5%),
+      radial-gradient(circle at 8% 60%, rgba(224,139,171,0.4) 0%, rgba(224,139,171,0) 5%),
+      linear-gradient(180deg, rgba(255,253,251,0.72) 0%, rgba(250,246,251,0.8) 45%, rgba(243,233,246,0.86) 100%);
   }
   .stage{
     max-width:460px;
@@ -98,6 +115,32 @@
     mask-composite:exclude;
     pointer-events:none;
   }
+  .hero-photo{
+    width:132px;
+    height:132px;
+    border-radius:50%;
+    margin:0 auto 14px;
+    padding:4px;
+    position:relative;
+    background:linear-gradient(135deg, var(--gold-light), var(--lavender) 45%, var(--pink) 100%);
+    box-shadow:0 12px 28px rgba(144,104,176,0.32), 0 0 0 6px rgba(255,255,255,0.6);
+  }
+  .hero-photo img{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center 22%;
+    display:block;
+    border:3px solid #fffdfb;
+  }
+  .hero-photo .hspark{
+    position:absolute;
+    font-size:20px;
+    filter:drop-shadow(0 0 4px rgba(255,255,255,0.9));
+  }
+  .hero-photo .hspark.a{ top:-6px; right:-2px; color:var(--gold); }
+  .hero-photo .hspark.b{ bottom:2px; left:-10px; color:var(--pink); }
   .sparkle-num{ text-align:center; margin:2px 0 4px; }
   @keyframes glowPulse{ 0%,100%{ text-shadow:0 0 16px rgba(199,154,61,0.35); } 50%{ text-shadow:0 0 30px rgba(199,154,61,0.65); } }
   .sparkle-num .six{
@@ -358,6 +401,9 @@
 </head>
 <body>
 
+<div class="bg-photo"></div>
+<div class="bg-wash"></div>
+
 <div class="fx-fall">
   <span class="p rect" style="--x:4%;  --s:6px;  --c:var(--gold-light); --d:9s;  --t:0s;"></span>
   <span class="p dot"  style="--x:12%; --s:5px;  --c:var(--pink);       --d:11s; --t:1.4s;"></span>
@@ -416,6 +462,11 @@
 
   <div class="card">
     <div class="flourish"><span>✨</span> <span>✨</span> <span>✨</span></div>
+    <div class="hero-photo">
+      <img src="errika_photo.jpg" alt="Η Έρρικα">
+      <span class="hspark a">✨</span>
+      <span class="hspark b">✨</span>
+    </div>
     <div class="eyebrow">Πρόσκληση Γενεθλίων</div>
     <div class="sparkle-num"><span class="spark">✨</span><span class="six">6</span><span class="spark">✨</span></div>
     <h1>Η <span>Έρρικα</span> κλείνει 6!</h1>
