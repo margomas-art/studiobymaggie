@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Οδοντιατρείο Χαριτίνη Σαμαρά | Άσσος Κορινθίας</title>
+<meta name="description" content="Οδοντιατρείο Χαριτίνη Σαμαρά στον Άσσο Κορινθίας. Απονεύρωση, λεύκανση, εμφυτεύματα, περιοδοντίτιδα, εξαγωγές. Ραντεβού: 2741 082132.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+:root{
+ --navy:#0E2038; --navy2:#16304F; --navy3:#1F4067; --ink:#081426;
+ --ivory:#FBF7F0; --ivory2:#F3ECDF; --ivory3:#E8DFCC;
+ --gold:#CBAA6A; --gold2:#E3CE9C; --golddk:#8A6E32;
+ --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+ --sans:'Inter',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ivory);color:var(--navy);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:-.012em}
+.lbl{font-family:var(--sans);font-size:10.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase}
+.tag{display:inline-block;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--golddk);background:rgba(203,170,106,.16);border:1px dashed rgba(203,170,106,.55);padding:3px 8px;border-radius:2px;white-space:nowrap;vertical-align:middle}
+.slot{opacity:.74}
+.hr{width:46px;height:1px;background:var(--gold);margin:18px 0 0;transform-origin:left}
+.js .hr{transform:scaleX(0);transition:transform 1.1s cubic-bezier(.16,1,.3,1) .18s}
+.js .rv.in .hr{transform:none}
+.js .rv{opacity:0;transform:translateY(30px);transition:opacity 1.05s cubic-bezier(.16,1,.3,1),transform 1.05s cubic-bezier(.16,1,.3,1)}
+.js .rv.in{opacity:1;transform:none}
+.js .cl{clip-path:inset(0 0 100% 0);transition:clip-path 1.35s cubic-bezier(.16,1,.3,1)}
+.js .cl.in{clip-path:inset(0 0 0 0)}
+
+.grain{position:fixed;inset:0;z-index:250;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* SEAL */
+.seal{width:58px;height:58px;flex:0 0 auto}
+.seal circle{fill:none;stroke:var(--gold2);stroke-width:1;stroke-dasharray:302;stroke-dashoffset:302;animation:dash 1.5s cubic-bezier(.16,1,.3,1) .25s forwards}
+.seal text{font-family:var(--serif);font-size:38px;font-weight:400;fill:var(--gold2);letter-spacing:.02em}
+.seal.st circle{animation:none;stroke-dashoffset:0}
+@keyframes dash{to{stroke-dashoffset:0}}
+
+/* LOADER */
+.pre{display:none}
+.js .pre{position:fixed;inset:0;z-index:400;background:linear-gradient(165deg,#0A1729,#16304F 52%,#081426);
+ display:flex;align-items:center;justify-content:center;transition:opacity 1s ease .3s,visibility 1s ease .3s;
+ animation:preout .9s ease 2.6s forwards}
+@keyframes preout{to{opacity:0;visibility:hidden}}
+.js .pre.off{opacity:0;visibility:hidden}
+.pre .pw{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+.pre .pw i{display:block;font-family:var(--sans);font-style:normal;font-size:9.5px;font-weight:600;letter-spacing:.34em;
+ text-transform:uppercase;color:var(--gold);opacity:0;animation:pu .9s cubic-bezier(.16,1,.3,1) .95s forwards}
+.pre .pw b{display:block;font-family:var(--serif);font-size:clamp(32px,7.4vw,60px);font-weight:400;color:var(--ivory);
+ letter-spacing:-.01em;opacity:0;animation:pu 1.1s cubic-bezier(.16,1,.3,1) 1.1s forwards}
+@keyframes pu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+.prog{position:fixed;top:0;left:0;height:2px;width:100%;z-index:300;transform:scaleX(0);transform-origin:left;
+ background:linear-gradient(90deg,#E3CE9C,#CBAA6A 60%,#8A6E32);pointer-events:none}
+
+/* NAV */
+.nav{position:fixed;top:15px;left:0;right:0;z-index:150;pointer-events:none}
+.nav .bar{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;
+ background:rgba(14,32,56,.4);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%);
+ border:1px solid rgba(227,206,156,.26);border-radius:3px;padding:9px 12px 9px 14px;transition:background .5s;
+ box-shadow:0 10px 34px -18px rgba(0,0,0,.55)}
+.nav.solid .bar{background:rgba(14,32,56,.94)}
+.nav .lg{display:flex;align-items:center;gap:11px}
+.nav .lg .seal{width:36px;height:36px}
+.nav .lg .seal text{font-size:41px}
+.nav .lg b{font-family:var(--serif);color:var(--ivory);font-size:19px;font-weight:500;line-height:1;display:block}
+.nav .lg i{display:block;font-family:var(--sans);font-style:normal;font-size:8px;font-weight:600;letter-spacing:.24em;
+ text-transform:uppercase;color:var(--gold);margin-top:4px}
+.nav .lks{display:none;gap:28px;font-size:12.5px;letter-spacing:.04em;color:rgba(251,247,240,.8)}
+.nav .lks a{position:relative;padding-bottom:3px}
+.nav .lks a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.nav .lks a:hover::after{transform:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-size:11.5px;font-weight:600;
+ letter-spacing:.15em;text-transform:uppercase;padding:14px 24px;border-radius:2px;white-space:nowrap;
+ transition:transform .45s cubic-bezier(.16,1,.3,1),background .45s,color .45s,box-shadow .45s}
+.btn-g{background:var(--gold);color:#2A1F06;box-shadow:0 8px 26px -10px rgba(203,170,106,.62)}
+.btn-g:hover{transform:translateY(-2px);background:var(--gold2);box-shadow:0 16px 38px -12px rgba(203,170,106,.75)}
+.btn-o{border:1px solid var(--gold);color:var(--gold)}
+.btn-o:hover{background:var(--gold);color:#2A1F06}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden;isolation:isolate;
+ background:linear-gradient(165deg,#0C1D33,#16304F 50%,#081426)}
+.hero .bg{position:absolute;inset:0;z-index:-3}
+.hero .bg img,.hero .bg video{width:100%;height:100%;object-fit:cover}
+.hero .bg img{animation:kb 30s ease-out forwards}
+@keyframes kb{from{transform:scale(1.13)}to{transform:scale(1.01)}}
+.hero .bg video{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.hero .bg video.on{opacity:1}
+.hero .sh{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(8,20,38,.64) 0%,rgba(8,20,38,.26) 32%,rgba(8,20,38,.74) 70%,rgba(8,20,38,.97) 100%)}
+.hero .vg{position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(125% 88% at 50% 40%,transparent 32%,rgba(8,20,38,.5) 78%,rgba(8,20,38,.84) 100%)}
+.hero .bloom{position:absolute;top:-22%;right:-14%;width:74vw;height:74vw;z-index:-2;pointer-events:none;
+ background:radial-gradient(circle,rgba(203,170,106,.34) 0%,rgba(203,170,106,.1) 38%,transparent 66%);filter:blur(34px)}
+.hero .bloom2{position:absolute;bottom:-26%;left:-18%;width:62vw;height:62vw;z-index:-2;pointer-events:none;
+ background:radial-gradient(circle,rgba(80,140,210,.2) 0%,transparent 62%);filter:blur(40px)}
+.hero .spot{position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:0;transition:opacity .8s ease;
+ background:radial-gradient(340px circle at var(--mx,50%) var(--my,40%),rgba(227,206,156,.17),transparent 70%)}
+@media(hover:hover) and (min-width:900px){.hero:hover .spot{opacity:1}}
+.hero .fr{position:absolute;inset:16px;z-index:-1;border:1px solid rgba(227,206,156,.22);pointer-events:none}
+.hero .in{position:relative;padding:122px 0 32px;width:100%;color:var(--ivory)}
+.hero .lbl{color:var(--gold)}
+.hero h1{font-size:clamp(44px,10.8vw,102px);font-weight:400;margin:18px 0 0;text-shadow:0 3px 46px rgba(8,20,38,.42)}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln>span{display:block}
+.js .hero h1 .ln>span{transform:translateY(112%);transition:transform 1.3s cubic-bezier(.16,1,.3,1)}
+.js .hero.go h1 .ln>span{transform:none}
+.hero h1 em{font-style:italic;font-weight:300;background-image:linear-gradient(100deg,#F1E3BF 0%,#D7BC80 46%,#B0904E 100%);
+ -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.js .hero .sb,.js .hero .badge,.js .hero .widget,.js .hero .lbl{opacity:0;transform:translateY(20px);transition:opacity 1s ease,transform 1s cubic-bezier(.16,1,.3,1)}
+.js .hero.go .lbl{opacity:1;transform:none;transition-delay:.1s}
+.js .hero.go .sb{opacity:1;transform:none;transition-delay:.62s}
+.js .hero.go .badge{opacity:1;transform:none;transition-delay:.76s}
+.js .hero.go .widget{opacity:1;transform:none;transition-delay:.88s}
+.hero .sb{max-width:33em;font-size:clamp(15px,1.6vw,18px);color:rgba(251,247,240,.85);margin-top:22px}
+.badge{display:inline-flex;flex-wrap:wrap;align-items:center;gap:9px 12px;margin-top:26px;background:rgba(251,247,240,.09);
+ backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(227,206,156,.3);
+ padding:9px 17px;font-size:12.5px;border-radius:2px;box-shadow:0 8px 26px -16px rgba(0,0,0,.5)}
+.badge .st{color:var(--gold);letter-spacing:.1em}
+.widget{margin-top:30px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+ background:rgba(227,206,156,.28);border:1px solid rgba(227,206,156,.28);box-shadow:0 22px 56px -28px rgba(0,0,0,.7)}
+.widget a{display:flex;flex-direction:column;gap:4px;padding:17px 16px;background:rgba(14,32,56,.5);
+ backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);transition:background .4s}
+.widget a:hover{background:var(--gold)}
+.widget a:hover b,.widget a:hover s{color:#2A1F06}
+.widget b{font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ivory)}
+.widget s{text-decoration:none;font-size:11.5px;color:rgba(251,247,240,.62)}
+.widget a.k{background:var(--gold)}
+.widget a.k b{color:#2A1F06}.widget a.k s{color:rgba(42,31,6,.66)}
+
+/* MARQUEE */
+.mq{background:linear-gradient(90deg,#0A1729,#153050 50%,#0A1729);color:var(--gold);padding:15px 0;overflow:hidden;white-space:nowrap;
+ border-top:1px solid rgba(227,206,156,.2);border-bottom:1px solid rgba(227,206,156,.2)}
+.mq .tr{display:inline-flex;gap:40px;animation:sl 38s linear infinite;font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.24em;text-transform:uppercase}
+.mq .tr span{display:inline-flex;align-items:center;gap:40px}
+.mq .tr span::after{content:'◆';font-size:7px;color:rgba(203,170,106,.5)}
+@keyframes sl{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:88px 0}
+.h2{font-size:clamp(33px,6vw,64px);font-weight:400}
+h2 em{font-style:italic;font-weight:300;background-image:linear-gradient(100deg,#C49E58 0%,#A9853F 52%,#7E6329 100%);
+ -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.rev h2 em,.band h2 em{background-image:linear-gradient(100deg,#F1E3BF 0%,#D7BC80 46%,#B0904E 100%)}
+.lede{font-size:clamp(15.5px,1.7vw,18px);color:rgba(14,32,56,.7);max-width:46ch;margin-top:22px}
+
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:50px}
+.bx{position:relative;overflow:hidden;min-height:192px;display:flex;flex-direction:column;justify-content:flex-end;padding:26px;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.bx:hover{transform:translateY(-6px)}
+.bx.wide{grid-column:span 2}
+.bx.ph{padding:0;min-height:250px;background:var(--navy2)}
+.bx.ph img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform 1.5s cubic-bezier(.16,1,.3,1)}
+.bx.ph:hover img{transform:scale(1.05)}
+.bx.ph::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+ background:linear-gradient(163deg,rgba(235,215,168,.2) 0%,transparent 44%),linear-gradient(0deg,rgba(8,20,38,.34) 0%,transparent 58%)}
+.bx.ph .ov{position:relative;z-index:3;margin-top:auto;padding:26px;width:100%;background:linear-gradient(0deg,rgba(8,20,38,.9),rgba(8,20,38,0));color:var(--ivory)}
+.bx.nv{background:linear-gradient(150deg,#173252,#0B1B30);color:var(--ivory)}
+.bx.gd{background:linear-gradient(145deg,#EBD7A8 0%,#CBAA6A 52%,#AC8B49 100%);color:#2A1F06;box-shadow:0 20px 52px -24px rgba(176,143,78,.62)}
+.bx.iv{background:linear-gradient(150deg,#FDFAF4,#EFE5D2);color:var(--navy);border:1px solid var(--ivory3)}
+.bx h3{font-size:clamp(22px,2.8vw,32px);font-weight:400}
+.bx p{font-family:var(--sans);font-size:13px;margin-top:9px;opacity:.76}
+.bx .big{font-family:var(--serif);font-size:clamp(52px,9vw,86px);font-weight:400;letter-spacing:-.03em;line-height:.86}
+.bx .k{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;opacity:.55;margin-bottom:auto}
+
+/* GALLERY */
+.hg{position:relative;background:linear-gradient(168deg,#0C1D33,#153050 50%,#0A1729)}
+.hgi{overflow:hidden}
+.hgt{display:flex;gap:16px;padding:70px 22px}
+.pan{flex:0 0 auto;width:80vw;position:relative;overflow:hidden;background:var(--navy2)}
+.pan img{width:100%;object-fit:cover;aspect-ratio:3/4}
+.pan::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
+ background:linear-gradient(160deg,rgba(235,215,168,.15) 0%,transparent 46%)}
+.pan .cp{position:absolute;left:0;right:0;bottom:0;z-index:3;padding:26px 22px;color:var(--ivory);
+ background:linear-gradient(0deg,rgba(8,20,38,.92),transparent)}
+.pan .cp .k{font-family:var(--sans);font-size:8.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:var(--gold2)}
+.pan .cp .t{font-family:var(--serif);font-size:clamp(21px,2.6vw,30px);font-weight:400;margin-top:6px}
+.hgh{max-width:1240px;margin:0 auto;padding:0 22px}
+
+/* REVIEWS */
+.rev{background:linear-gradient(168deg,#0C1D33 0%,#153050 48%,#0A1729 100%);color:var(--ivory);position:relative;overflow:hidden}
+.rev>.wrap{position:relative;z-index:2}
+.rev::after{content:'';position:absolute;bottom:-24%;left:-14%;width:66vw;height:66vw;z-index:1;pointer-events:none;
+ background:radial-gradient(circle,rgba(203,170,106,.17) 0%,transparent 64%);filter:blur(26px)}
+.rev .lbl{color:var(--gold)}
+.rev .top{display:grid;gap:34px;align-items:end}
+.rev .score{display:flex;align-items:flex-end;gap:18px}
+.rev .score .n{font-family:var(--serif);font-size:clamp(80px,16vw,146px);font-weight:300;letter-spacing:-.04em;line-height:.8;color:var(--gold)}
+.rev .score .m{padding-bottom:10px}
+.rev .score .st{color:var(--gold);font-size:18px;letter-spacing:.16em}
+.rev .score .c{font-family:var(--sans);font-size:12.5px;color:rgba(251,247,240,.66);margin-top:7px}
+.gcards{display:grid;grid-template-columns:1fr;gap:14px;margin-top:48px}
+.gc{background:rgba(251,247,240,.055);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+ border:1px solid rgba(227,206,156,.22);padding:28px 26px;box-shadow:0 14px 40px -26px rgba(0,0,0,.6);
+ transition:transform .55s cubic-bezier(.16,1,.3,1),background .55s,border-color .55s}
+.gc:hover{transform:translateY(-6px);background:rgba(251,247,240,.09);border-color:var(--gold)}
+.gc .st{color:var(--gold);font-size:13px;letter-spacing:.14em}
+.gc q{display:block;quotes:none;font-family:var(--serif);font-style:italic;font-weight:300;font-size:19px;line-height:1.5;margin-top:14px;color:rgba(251,247,240,.92);min-height:4.4em}
+.gc .row{display:flex;align-items:center;gap:12px;margin-top:20px}
+.gc .av{width:34px;height:34px;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15px;border-radius:50%}
+.gc .w{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:rgba(251,247,240,.5)}
+
+/* SERVICES */
+.sv{display:grid;grid-template-columns:1fr;gap:14px;margin-top:50px}
+.sc{position:relative;overflow:hidden;background:#fff;border:1px solid var(--ivory3);padding:30px 28px;
+ box-shadow:0 3px 12px -7px rgba(14,32,56,.16);transition:transform .55s cubic-bezier(.16,1,.3,1),box-shadow .55s,border-color .55s}
+.sc:hover{transform:translateY(-7px);box-shadow:0 26px 56px -26px rgba(14,32,56,.34);border-color:var(--gold)}
+.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#E3CE9C,#CBAA6A);
+ transform:scaleX(0);transform-origin:left;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.sc:hover::before{transform:none}
+.sc .n{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.1em}
+.sc h3{font-size:24px;font-weight:400;margin-top:12px}
+.sc p{font-family:var(--sans);font-size:14px;color:rgba(14,32,56,.62);margin-top:9px}
+
+/* SLIDER */
+.ba{position:relative;overflow:hidden;background:var(--navy2);aspect-ratio:4/3;margin-top:44px;cursor:ew-resize;user-select:none;
+ touch-action:none;box-shadow:0 36px 78px -40px rgba(14,32,56,.6)}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .aft{clip-path:inset(0 0 0 var(--p,50%))}
+.ba .grd{position:absolute;inset:0;z-index:3;pointer-events:none;
+ background:linear-gradient(163deg,rgba(235,215,168,.16) 0%,transparent 44%),linear-gradient(0deg,rgba(8,20,38,.3) 0%,transparent 52%)}
+.ba .hdl{position:absolute;top:0;bottom:0;left:var(--p,50%);width:1.5px;background:var(--gold2);z-index:5;box-shadow:0 0 24px rgba(227,206,156,.85)}
+.ba .hdl::after{content:'';position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;
+ background:rgba(14,32,56,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--gold)}
+.ba .hdl::before{content:'‹  ›';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;
+ font-family:var(--sans);font-size:14px;font-weight:600;color:var(--gold2);white-space:nowrap}
+.ba .cap{position:absolute;bottom:16px;z-index:4;font-family:var(--sans);font-size:8.5px;font-weight:600;letter-spacing:.24em;
+ text-transform:uppercase;color:var(--ivory);background:rgba(8,20,38,.62);padding:7px 12px;border:1px solid rgba(227,206,156,.4)}
+.ba .c1{left:16px}.ba .c2{right:16px}
+
+/* DOCTOR */
+.doc{background:linear-gradient(160deg,#FBF7F0 0%,#F1E8D8 55%,#E9DEC9 100%)}
+.doc .g{display:grid;grid-template-columns:1fr;gap:38px;align-items:center}
+.doc .pic{position:relative;aspect-ratio:4/5;background:var(--navy2);overflow:hidden;box-shadow:0 34px 70px -34px rgba(14,32,56,.55)}
+.doc .pic img{width:100%;height:100%;object-fit:cover;will-change:transform}
+.doc .pic::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:linear-gradient(160deg,rgba(235,215,168,.18) 0%,transparent 46%),linear-gradient(0deg,rgba(8,20,38,.42) 0%,transparent 62%)}
+.doc .pic .fr2{position:absolute;inset:13px;border:1px solid rgba(251,247,240,.4);z-index:3;pointer-events:none}
+.doc .fl{position:absolute;left:26px;bottom:26px;right:26px;z-index:3;background:rgba(14,32,56,.72);
+ backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(227,206,156,.34);padding:15px 18px}
+.doc .fl b{display:block;font-family:var(--serif);font-size:20px;font-weight:500;color:var(--ivory)}
+.doc .fl s{text-decoration:none;font-family:var(--sans);font-size:9.5px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+.doc blockquote{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(25px,4.2vw,42px);line-height:1.3;margin-top:22px}
+.st3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:40px;background:var(--ivory3);border:1px solid var(--ivory3)}
+.stb{background:var(--ivory);padding:24px 16px;text-align:center}
+.stb .n{font-family:var(--serif);font-size:clamp(30px,5.6vw,50px);font-weight:400;color:var(--navy);line-height:1}
+.stb .l{font-family:var(--sans);font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(14,32,56,.5);margin-top:10px}
+
+/* BAND */
+.band{background:linear-gradient(140deg,#0B1B30 0%,#17324F 46%,#0A1930 100%);color:var(--ivory);padding:74px 26px;text-align:center;position:relative;overflow:hidden}
+.band>*{position:relative;z-index:2}
+.band::after{content:'';position:absolute;top:-40%;right:-16%;width:60vw;height:60vw;z-index:1;pointer-events:none;
+ background:radial-gradient(circle,rgba(203,170,106,.24) 0%,transparent 62%);filter:blur(30px)}
+.band .fr3{position:absolute;inset:15px;border:1px solid rgba(227,206,156,.26);pointer-events:none;z-index:2}
+.band h2{font-size:clamp(32px,6.6vw,66px);font-weight:400}
+.band p{font-family:var(--sans);margin-top:16px;font-size:15.5px;color:rgba(251,247,240,.72)}
+
+/* CONTACT */
+.ct .rows{margin-top:44px}
+.ct .r{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:21px 0;border-bottom:1px solid var(--ivory3)}
+.ct .k{font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:rgba(14,32,56,.45);flex:0 0 auto}
+.ct .v{text-align:right;font-family:var(--serif);font-size:19px;font-weight:400}
+.ct .v a{border-bottom:1px solid var(--gold)}
+
+footer{background:linear-gradient(180deg,#0A1728,#04101F);color:rgba(251,247,240,.5);padding:52px 0 112px;font-family:var(--sans);font-size:12px;text-align:center}
+footer .seal{margin:0 auto 18px}
+footer b{font-family:var(--serif);color:var(--ivory);display:block;font-size:22px;font-weight:400;margin-bottom:8px}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:140;display:flex;transform:translateY(120%);transition:transform .55s cubic-bezier(.16,1,.3,1)}
+.sticky.up{transform:none}
+.sticky a{flex:1;display:flex;align-items:center;justify-content:center;padding:17px;font-family:var(--sans);font-size:11.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase}
+.sticky .a1{background:var(--gold);color:#2A1F06}
+.sticky .a2{background:var(--navy);color:var(--ivory)}
+
+@media(min-width:900px){
+ .widget{grid-template-columns:repeat(4,1fr)}
+ .bento{grid-template-columns:repeat(4,1fr)}
+ .bx.tall{grid-row:span 2}
+ .gcards{grid-template-columns:repeat(3,1fr)}
+ .sv{grid-template-columns:repeat(3,1fr)}
+ .doc .g{grid-template-columns:.88fr 1.12fr;gap:70px}
+ .rev .top{grid-template-columns:1fr 1fr}
+ .nav .lks{display:flex}
+ section{padding:126px 0}
+ .sticky{display:none}
+ .hg{height:320vh}
+ .hgi{position:sticky;top:0;height:100vh;display:flex;align-items:center}
+ .hgt{padding:0 7vw}
+ .pan{width:min(50vw,540px);height:72vh}
+ .pan img{height:100%;aspect-ratio:auto}
+}
+@media(max-width:899px){
+ .hgt{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+ .hgt::-webkit-scrollbar{display:none}
+ .pan{scroll-snap-align:center}
+ .ct .r{flex-direction:column;gap:4px}
+ .ct .v{text-align:left}
+ .doc .fl{left:18px;right:18px;bottom:18px}
+ .band{padding:58px 20px}
+ .bx{padding:22px}
+ .bx.ph .ov{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<div class="pre" id="pre"><div class="pw">
+ <svg class="seal" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48"/><text x="50" y="63" text-anchor="middle">ΧΣ</text></svg>
+ <i>Άσσος Κορινθίας</i><b>Χαριτίνη Σαμαρά</b>
+</div></div>
+<div class="prog" id="prog"></div>
+<div class="grain"></div>
+
+<nav class="nav" id="nav"><div class="wrap"><div class="bar">
+ <a class="lg" href="#top">
+  <svg class="seal st" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48"/><text x="50" y="64" text-anchor="middle">ΧΣ</text></svg>
+  <span><b>Σαμαρά</b><i>Οδοντιατρείο</i></span>
+ </a>
+ <div class="lks"><a href="#ypiresies">Υπηρεσίες</a><a href="#choros">Ο χώρος</a><a href="#kritikes">Κριτικές</a><a href="#apotelesmata">Αποτελέσματα</a><a href="#epikoinonia">Επικοινωνία</a></div>
+ <a class="btn btn-g" href="tel:+302741082132">Ραντεβού</a>
+</div></div></nav>
+
+<header class="hero" id="top">
+ <div class="bg">
+  <img alt="" loading="eager" decoding="async" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040734_0e3d08a4-01f5-4f03-80f9-cbd777c630c4.png">
+  <video id="hVid" muted loop playsinline autoplay preload="auto" poster="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040734_0e3d08a4-01f5-4f03-80f9-cbd777c630c4.png">
+   <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040838_bed9cf06-8001-45c0-874b-e5fefea124ef.mp4" type="video/mp4">
+  </video>
+ </div>
+ <div class="sh"></div><div class="vg"></div><div class="bloom"></div><div class="bloom2"></div><div class="spot" id="spot"></div><div class="fr"></div>
+ <div class="wrap in">
+  <p class="lbl">Οδοντιατρείο · Άσσος Κορινθίας</p>
+  <h1><span class="ln"><span>Χαμογελάστε</span></span><span class="ln"><span style="transition-delay:.14s"><em>χωρίς φόβο.</em></span></span></h1>
+  <p class="sb">Σύγχρονη οδοντιατρική φροντίδα στον Άσσο Κορινθίας — με χρόνο, υπομονή και προσοχή για κάθε ασθενή.</p>
+  <div class="badge"><span class="st">★★★★★</span><span>9 κριτικές στο Google</span><span class="tag">βαθμολογία προς επιβεβαίωση</span></div>
+  <div class="widget">
+   <a class="k" href="tel:+302741082132"><b>Καλέστε</b><s>2741 082132</s></a>
+   <a href="tel:+306940668984"><b>Κινητό</b><s>694 066 8984</s></a>
+   <a href="https://www.google.com/maps/search/?api=1&query=Palaia+Ethniki+Odos+Korinthou+Patron+20006+Assos+Korinthias"><b>Χάρτης</b><s>Άσσος Κορινθίας</s></a>
+   <a href="#epikoinonia"><b>Ώρες</b><s>Δευ – Παρ</s></a>
+  </div>
+ </div>
+</header>
+
+<div class="mq"><div class="tr">
+ <span>Απονεύρωση</span><span>Λεύκανση</span><span>Εμφυτεύματα</span><span>Περιοδοντίτιδα</span><span>Εξαγωγές</span><span>Πρόληψη</span>
+ <span>Απονεύρωση</span><span>Λεύκανση</span><span>Εμφυτεύματα</span><span>Περιοδοντίτιδα</span><span>Εξαγωγές</span><span>Πρόληψη</span>
+</div></div>
+
+<section>
+ <div class="wrap">
+  <p class="lbl rv" style="color:var(--golddk)">Το ιατρείο</p>
+  <h2 class="h2 rv" style="margin-top:16px">Πότε γελάσατε τελευταία φορά<br><em>χωρίς να κρύψετε τα δόντια σας;</em></h2>
+  <div class="rv"><div class="hr"></div></div>
+  <p class="lede rv">Οι πιο κοντινοί οδοντίατροι είναι στην Κόρινθο. Εδώ, στον Άσσο, θα σας δει κάποιος που έχει χρόνο — και δεν θα σας κρίνει για τίποτα.</p>
+
+  <div class="bento">
+   <div class="bx ph tall rv cl">
+    <img alt="" loading="eager" decoding="async" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040801_2fa4cbbb-a7f1-4a6c-b817-0523ce542a52.png">
+    <div class="ov"><h3>Χώρος που ηρεμεί</h3><p>Καθαρός, φωτεινός, φιλόξενος.</p></div>
+   </div>
+   <div class="bx gd wide rv" style="transition-delay:.07s">
+    <div class="k">Google</div>
+    <div class="big">9</div>
+    <h3 style="margin-top:12px">κριτικές από ασθενείς</h3>
+    <p>Και όλες λένε το ίδιο. <span class="tag" style="color:#2A1F06;border-color:rgba(42,31,6,.4);background:rgba(42,31,6,.09)">προς επιβεβαίωση</span></p>
+   </div>
+   <div class="bx nv rv" style="transition-delay:.12s">
+    <div class="k">Τηλέφωνο</div>
+    <h3>2741<br>082132</h3>
+    <p>Ένα τηλεφώνημα, και κλείσαμε.</p>
+   </div>
+   <div class="bx iv rv" style="transition-delay:.16s">
+    <div class="k">Πού</div>
+    <h3>Άσσος<br>Κορινθίας</h3>
+    <p>Παλαιά Εθνική Οδός Κορίνθου–Πατρών</p>
+   </div>
+   <div class="bx ph wide rv cl" style="transition-delay:.2s">
+    <img alt="" loading="eager" decoding="async" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040804_a850fa82-577d-4476-b87c-e37c183ea592.png">
+    <div class="ov"><h3>Για κάθε ηλικία</h3><p>Από τα παιδιά μέχρι τους γονείς σας.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="hg" id="choros" style="padding:0">
+ <div class="hgi">
+  <div class="hgt" id="hgt">
+   <div class="pan"><img alt="" loading="eager" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040801_2fa4cbbb-a7f1-4a6c-b817-0523ce542a52.png"><div class="cp"><span class="k">Ι — Ο χώρος</span><div class="t">Φως, ησυχία, καθαρότητα</div></div></div>
+   <div class="pan"><img alt="" loading="eager" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_043621_7d29c69e-17c1-4c02-9394-694388e86b7c.png"><div class="cp"><span class="k">ΙΙ — Η αναμονή</span><div class="t">Ελληνικό φως, ελιά, ησυχία</div></div></div>
+   <div class="pan"><img alt="" loading="eager" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040734_0e3d08a4-01f5-4f03-80f9-cbd777c630c4.png"><div class="cp"><span class="k">ΙΙΙ — Η εμπειρία</span><div class="t">Χωρίς άγχος, με χρόνο</div></div></div>
+   <div class="pan"><img alt="" loading="eager" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040804_a850fa82-577d-4476-b87c-e37c183ea592.png"><div class="cp"><span class="k">ΙV — Οι ασθενείς</span><div class="t">Από τα παιδιά μέχρι τους γονείς σας</div></div></div>
+   <div class="pan"><img alt="" loading="eager" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040758_bc5573a2-b74c-46bb-8856-4f93fd5bee3e.png"><div class="cp"><span class="k">V — Η γιατρός</span><div class="t">Χαριτίνη Σαμαρά</div></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="rev" id="kritikes">
+ <div class="wrap">
+  <div class="top">
+   <div>
+    <p class="lbl rv">Κριτικές</p>
+    <h2 class="h2 rv" style="margin-top:16px">Δεν το λέμε<br><em>εμείς.</em></h2>
+    <div class="rv"><div class="hr"></div></div>
+   </div>
+   <div class="score rv" style="transition-delay:.08s">
+    <div class="n">5,0</div>
+    <div class="m"><div class="st">★★★★★</div><div class="c">9 κριτικές στο Google <span class="tag">επιβεβαίωση</span></div></div>
+   </div>
+  </div>
+  <div class="gcards">
+   <div class="gc rv"><div class="st">★★★★★</div><q class="slot">Εδώ μπαίνει το κείμενο πραγματικής κριτικής από το προφίλ σας στο Google.</q><div class="row"><div class="av">Α</div><div class="w">Κριτική Google</div></div></div>
+   <div class="gc rv" style="transition-delay:.09s"><div class="st">★★★★★</div><q class="slot">Εδώ μπαίνει το κείμενο πραγματικής κριτικής από το προφίλ σας στο Google.</q><div class="row"><div class="av">Μ</div><div class="w">Κριτική Google</div></div></div>
+   <div class="gc rv" style="transition-delay:.18s"><div class="st">★★★★★</div><q class="slot">Εδώ μπαίνει το κείμενο πραγματικής κριτικής από το προφίλ σας στο Google.</q><div class="row"><div class="av">Δ</div><div class="w">Κριτική Google</div></div></div>
+  </div>
+  <div class="rv" style="margin-top:38px"><a class="btn btn-o" href="#">Δείτε τις κριτικές στο Google</a></div>
+ </div>
+</section>
+
+<section id="apotelesmata">
+ <div class="wrap">
+  <p class="lbl rv" style="color:var(--golddk)">Αποτελέσματα</p>
+  <h2 class="h2 rv" style="margin-top:16px">Σύρετε<br><em>και δείτε.</em></h2>
+  <div class="rv"><div class="hr"></div></div>
+  <p class="lede rv">Πιάστε τη γραμμή και σύρετέ την δεξιά ή αριστερά. <span class="tag">δείγμα — μπαίνουν δικές σας περιπτώσεις</span></p>
+  <div class="ba rv" id="ba">
+   <img alt="" loading="eager" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_042901_75fe349f-508c-4856-b476-0aa39d6fdab8.png">
+   <img class="aft" alt="" loading="eager" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_043000_2af486e0-3f1e-464c-9b06-7d3c4d329819.png">
+   <div class="grd"></div>
+   <span class="cap c1">Πριν</span><span class="cap c2">Μετά</span>
+   <div class="hdl"></div>
+  </div>
+ </div>
+</section>
+
+<section id="ypiresies">
+ <div class="wrap">
+  <p class="lbl rv" style="color:var(--golddk)">Υπηρεσίες</p>
+  <h2 class="h2 rv" style="margin-top:16px">Ό,τι χρειάζεστε,<br><em>στον Άσσο.</em></h2>
+  <div class="rv"><div class="hr"></div></div>
+  <div class="sv">
+   <div class="sc rv"><div class="n">I</div><h3>Απονεύρωση</h3><p>Σταματάμε τον πόνο και σώζουμε το δόντι.</p></div>
+   <div class="sc rv" style="transition-delay:.06s"><div class="n">II</div><h3>Λεύκανση</h3><p>Φυσικό, φωτεινό αποτέλεσμα.</p></div>
+   <div class="sc rv" style="transition-delay:.12s"><div class="n">III</div><h3>Εμφυτεύματα</h3><p>Μόνιμη λύση για χαμένα δόντια.</p></div>
+   <div class="sc rv" style="transition-delay:.18s"><div class="n">IV</div><h3>Ουλίτιδα &amp; Περιοδοντίτιδα</h3><p>Θεραπεία και πρόληψη για υγιή ούλα.</p></div>
+   <div class="sc rv" style="transition-delay:.24s"><div class="n">V</div><h3>Εξαγωγές</h3><p>Με ασφάλεια και προσοχή, όταν χρειάζεται.</p></div>
+   <div class="sc rv" style="transition-delay:.3s"><div class="n">VI</div><h3>Έλεγχος &amp; Πρόληψη <span class="tag">προς επιβεβαίωση</span></h3><p>Ο τακτικός έλεγχος κοστίζει πάντα λιγότερο.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="doc" id="iatros">
+ <div class="wrap g">
+  <div class="pic rv cl">
+   <img alt="" loading="eager" id="drimg" src="https://d8j0ntlcm91z4.cloudfront.net/user_38wh1tB4ijmlvPvPhJ9FO3yCPkx/hf_20260730_040758_bc5573a2-b74c-46bb-8856-4f93fd5bee3e.png">
+   <div class="fr2"></div>
+   <div class="fl"><b>Χαριτίνη Σαμαρά</b><s>Οδοντίατρος</s></div>
+  </div>
+  <div>
+   <p class="lbl rv" style="color:var(--golddk)">Η γιατρός</p>
+   <div class="rv"><div class="hr"></div></div>
+   <blockquote class="rv slot" style="transition-delay:.07s">Εδώ μπαίνουν τα δικά σας λόγια — γιατί κάνετε αυτή τη δουλειά, και τι θέλετε να νιώθει ο ασθενής όταν φεύγει.</blockquote>
+   <p class="rv" style="transition-delay:.12s;margin-top:22px;font-family:var(--sans);font-size:12.5px;color:rgba(14,32,56,.55)">Χαριτίνη Σαμαρά, Οδοντίατρος <span class="tag">πρόχειρο κείμενο</span></p>
+   <div class="st3 rv" style="transition-delay:.16s">
+    <div class="stb"><div class="n">9</div><div class="l">Κριτικές</div></div>
+    <div class="stb"><div class="n">6</div><div class="l">Υπηρεσίες</div></div>
+    <div class="stb"><div class="n">1</div><div class="l">Ιατρείο στον Άσσο</div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section style="padding:0"><div class="band rv">
+ <div class="fr3"></div>
+ <h2>Κλείστε ραντεβού<br><em>σήμερα.</em></h2>
+ <p>Ένα τηλεφώνημα είναι αρκετό. Τα υπόλοιπα τα αναλαμβάνουμε εμείς.</p>
+ <div style="margin-top:30px"><a class="btn btn-g" href="tel:+302741082132">Καλέστε 2741 082132</a></div>
+</div></section>
+
+<section class="ct" id="epikoinonia">
+ <div class="wrap">
+  <p class="lbl rv" style="color:var(--golddk)">Επικοινωνία</p>
+  <h2 class="h2 rv" style="margin-top:16px">Θα σας<br><em>περιμένουμε.</em></h2>
+  <div class="rows">
+   <div class="r rv"><span class="k">Τηλέφωνο</span><span class="v"><a href="tel:+302741082132">2741 082132</a></span></div>
+   <div class="r rv" style="transition-delay:.05s"><span class="k">Κινητό</span><span class="v"><a href="tel:+306940668984">694 066 8984</a></span></div>
+   <div class="r rv" style="transition-delay:.1s"><span class="k">Διεύθυνση</span><span class="v">Παλαιά Εθνική Οδός Κορίνθου–Πατρών<br>200 06 Άσσος Κορινθίας</span></div>
+   <div class="r rv" style="transition-delay:.15s"><span class="k">Ώρες</span><span class="v slot">Δευ–Παρ <span class="tag">συμπληρώνεται</span></span></div>
+   <div class="r rv" style="transition-delay:.2s"><span class="k">Χάρτης</span><span class="v"><a href="https://www.google.com/maps/search/?api=1&query=Palaia+Ethniki+Odos+Korinthou+Patron+20006+Assos+Korinthias">Οδηγίες διαδρομής</a></span></div>
+  </div>
+ </div>
+</section>
+
+<footer><div class="wrap">
+ <svg class="seal st" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48"/><text x="50" y="63" text-anchor="middle">ΧΣ</text></svg>
+ <b>Οδοντιατρείο Χαριτίνη Σαμαρά</b>Άσσος Κορινθίας · 2741 082132
+</div></footer>
+
+<div class="sticky" id="sticky">
+ <a class="a1" href="tel:+302741082132">Καλέστε</a>
+ <a class="a2" href="https://www.google.com/maps/search/?api=1&query=Palaia+Ethniki+Odos+Korinthou+Patron+20006+Assos+Korinthias">Χάρτης</a>
+</div>
+
+<script>
+(function(){
+ var d=document,W=window;
+ function boot(){
+  var pre=d.getElementById('pre'),hero=d.getElementById('top');
+  setTimeout(function(){if(pre)pre.classList.add('off')},1750);
+  setTimeout(function(){if(hero)hero.classList.add('go')},1810);
+  setTimeout(function(){if(pre)pre.style.display='none'},3200);
+
+  var rev=[].slice.call(d.querySelectorAll('.rv,.cl'));
+  function count(el){
+   var ns=el.querySelectorAll('.stb .n');
+   for(var i=0;i<ns.length;i++)(function(n){
+    var to=parseInt(n.textContent,10);if(isNaN(to))return;var st=null;n.textContent='0';
+    function s(t){if(!st)st=t;var p=Math.min((t-st)/950,1);
+     n.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(s)}
+    requestAnimationFrame(s);
+   })(ns[i]);
+  }
+  function reveal(){
+   for(var i=rev.length-1;i>=0;i--){var el=rev[i],r=el.getBoundingClientRect();
+    if(r.top<W.innerHeight*0.94&&r.bottom>-60){el.classList.add('in');count(el);rev.splice(i,1)}}
+  }
+
+  var nav=d.getElementById('nav'),sk=d.getElementById('sticky'),pg=d.getElementById('prog'),
+      dri=d.getElementById('drimg'),hg=d.querySelector('.hg'),hgt=d.getElementById('hgt');
+  function sc(){
+   var y=W.pageYOffset,h=d.documentElement.scrollHeight-W.innerHeight;
+   if(nav)nav.classList.toggle('solid',y>60);
+   if(sk)sk.classList.toggle('up',y>W.innerHeight*.78);
+   if(pg)pg.style.transform='scaleX('+(h>0?(y/h):0)+')';
+   if(dri){var pr=dri.parentElement.getBoundingClientRect();
+    if(pr.top<W.innerHeight&&pr.bottom>0){
+     var o=(pr.top+pr.height/2-W.innerHeight/2)/W.innerHeight;
+     dri.style.transform='scale(1.13) translateY('+(o*-28).toFixed(1)+'px)';}}
+   if(hg&&hgt){
+    if(W.innerWidth>=900){
+     var r=hg.getBoundingClientRect(),tot=hg.offsetHeight-W.innerHeight;
+     var p=Math.max(0,Math.min(1,(-r.top)/(tot||1)));
+     var mx=hgt.scrollWidth-W.innerWidth+40;
+     hgt.style.transform='translateX('+(-p*Math.max(0,mx)).toFixed(1)+'px)';
+    }else if(hgt.style.transform){hgt.style.transform=''}
+   }
+   reveal();
+  }
+  W.addEventListener('scroll',sc,{passive:true});
+  W.addEventListener('resize',sc);
+  sc();setTimeout(sc,400);setTimeout(sc,1400);
+  W.addEventListener('load',function(){sc();setTimeout(sc,300)});
+
+  var sp=d.getElementById('spot');
+  if(sp&&hero)hero.addEventListener('mousemove',function(e){
+   var r=hero.getBoundingClientRect();
+   sp.style.setProperty('--mx',(e.clientX-r.left)+'px');
+   sp.style.setProperty('--my',(e.clientY-r.top)+'px');});
+
+  var ba=d.getElementById('ba');
+  if(ba){
+   ba.style.setProperty('--p','50%');var dg=false;
+   function st(x){var r=ba.getBoundingClientRect();
+    ba.style.setProperty('--p',Math.max(0,Math.min(100,(x-r.left)/r.width*100))+'%')}
+   ba.addEventListener('pointerdown',function(e){dg=true;try{ba.setPointerCapture(e.pointerId)}catch(_){}st(e.clientX)});
+   ba.addEventListener('pointermove',function(e){if(dg)st(e.clientX)});
+   ba.addEventListener('pointerup',function(){dg=false});
+   ba.addEventListener('pointercancel',function(){dg=false});
+  }
+
+  d.querySelectorAll('a[href^="#"]').forEach(function(a){
+   a.addEventListener('click',function(e){
+    var t=d.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();W.scrollTo({top:t.offsetTop-70,behavior:'smooth'})}});
+  });
+
+  var v=d.getElementById('hVid');
+  if(v){
+   v.addEventListener('canplay',function(){v.classList.add('on');var p=v.play();if(p&&p.catch)p.catch(function(){})});
+   v.addEventListener('error',function(){v.remove()});
+  }
+  d.querySelectorAll('img').forEach(function(im){
+   im.addEventListener('error',function(){var p=im.parentElement;im.remove();
+    if(p){p.style.background='linear-gradient(150deg,#0E2038,#1F4067 60%,#2A5480)'}});
+  });
+ }
+ if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',boot);else boot();
+})();
+</script>
+</body>
+</html>
