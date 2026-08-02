@@ -43,7 +43,7 @@
 :root{
   --ivory:#F7F3EC; --ivory-2:#EFE8DD; --ivory-3:#E7DED0;
   --espresso:#4A2B33; --espresso-2:#5A3540;
-  --rose:#A9807A; --gold:#C9A867;
+  --rose:#9C6156; --rose-ink:#854E46; --gold:#C9A867;
   --ink:#2A211C; --ink-soft:#57493F;
   --line:rgba(42,33,28,.14);
   --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
@@ -65,8 +65,8 @@ video{display:block;max-width:100%}
 .mid{max-width:720px;margin:0 auto}
 .tight{max-width:600px;margin:0 auto}
 section{padding:clamp(88px,14vw,190px) 0;position:relative}
-.eyebrow{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.24em;
-  text-transform:uppercase;color:var(--rose)}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--rose-ink)}
 .eyebrow.gold{color:#D8B494}
 h2{font-size:clamp(2.15rem,5.2vw,3.5rem)}
 .lede{font-size:1.26rem;color:var(--ink-soft);line-height:1.72;max-width:56ch}
@@ -80,15 +80,15 @@ h2{font-size:clamp(2.15rem,5.2vw,3.5rem)}
   gap:clamp(34px,4.5vw,62px);margin-top:clamp(46px,6vw,78px);text-align:left}
 .listen2 figure{margin:0}
 .listen2 figcaption{margin-top:22px}
-.listen2 .who{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+.listen2 .who{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--rose-ink);margin-bottom:12px}
 .listen2 p{font-size:1.02rem;color:var(--ink-soft);line-height:1.72}
 
 /* testimonials — one voice at a time, the way the About section breathes */
 .voicesection{position:relative;overflow:hidden}
 .voicesection::before{content:"";position:absolute;inset:0;
   background:#F3EDE4 url('voices-bg.jpg') center/cover no-repeat}
-.voicesection::after{content:"";position:absolute;inset:0;background:rgba(250,246,239,.70)}
+.voicesection::after{content:"";position:absolute;inset:0;background:rgba(250,246,239,.80)}
 .voicesection > .wrap{position:relative;z-index:2}
 .voices{margin-top:clamp(46px,5.5vw,72px);position:relative}
 .voices::before{content:"\201C";position:absolute;top:-.40em;left:50%;transform:translateX(-50%);
@@ -102,10 +102,10 @@ h2{font-size:clamp(2.15rem,5.2vw,3.5rem)}
 .js .vstage .voice.is-on{opacity:1;visibility:visible;transform:none}
 .vnav{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:clamp(30px,4vw,46px)}
 .js .vnav{display:flex}.vnav{display:none}
-.vdot{width:7px;height:7px;padding:0;border:1px solid var(--rose);background:transparent;
+.vdot{width:8px;height:8px;padding:0;border:1px solid var(--rose-ink);background:transparent;
   border-radius:50%;cursor:pointer;transition:background .4s var(--slow),transform .4s var(--slow)}
-.vdot[aria-selected="true"]{background:var(--rose);transform:scale(1.35)}
-.varrow{border:0;background:none;cursor:pointer;color:var(--rose);opacity:.6;padding:6px 10px;
+.vdot[aria-selected="true"]{background:var(--rose-ink);transform:scale(1.35)}
+.varrow{border:0;background:none;cursor:pointer;color:var(--rose-ink);opacity:.75;padding:6px 10px;
   font-family:var(--serif);font-size:1.5rem;line-height:1;transition:opacity .4s var(--slow)}
 .varrow:hover{opacity:1}
 .voice q{display:block;quotes:none;font-family:var(--serif);font-style:italic;font-weight:400;
@@ -133,7 +133,7 @@ h2{font-size:clamp(2.15rem,5.2vw,3.5rem)}
   min-height:clamp(440px,58vh,600px);display:flex;align-items:center}
 .promiseband::before{content:"";position:absolute;inset:0;
   background:var(--ivory-2) url('promise-bg.jpg') center/cover no-repeat}
-.promiseband::after{content:"";position:absolute;inset:0;background:rgba(250,246,239,.50)}
+.promiseband::after{content:"";position:absolute;inset:0;background:rgba(250,246,239,.58)}
 .promiseband > .wrap{position:relative;z-index:2;width:100%}
 .promisetext{max-width:34ch}
 .promiseband .eyebrow{color:var(--gold)}
@@ -176,7 +176,9 @@ h2{font-size:clamp(2.15rem,5.2vw,3.5rem)}
   margin:26px 0 30px;max-width:19ch}
 .hero h1 em{color:var(--ivory);opacity:.92}
 .hero .sub{max-width:46ch;color:rgba(247,243,236,.88);font-size:1.08rem;line-height:1.8}
-.heroacts{display:flex;align-items:center;gap:clamp(20px,4vw,42px);flex-wrap:wrap;margin-top:44px}
+.facts{margin-top:30px;font-family:var(--sans);font-size:12.5px;font-weight:500;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(247,243,236,.9)}
+.heroacts{display:flex;align-items:center;gap:clamp(20px,4vw,42px);flex-wrap:wrap;margin-top:32px}
 
 
 /* ── one emotion per section ─────────────────────────────── */
@@ -280,14 +282,17 @@ ul.deliver li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;
 .nameinput{width:100%;font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.1rem);text-align:center;
   background:none;border:0;border-bottom:1px solid var(--rose);color:var(--ink);padding:6px 8px 12px;outline:none}
 .nameinput::placeholder{color:rgba(107,92,83,.4);font-style:italic}
-.echo{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--rose);
+.echo{margin-top:24px;font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--rose-ink);
   min-height:1.7em;opacity:0;transition:opacity .7s var(--slow)}
 .echo.on{opacity:1}
 .ways{margin-top:26px;font-size:.98rem;color:var(--ink-soft);max-width:44ch;margin-left:auto;margin-right:auto}
 .ways a{border-bottom:1px solid var(--rose)}
 .giver{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.72rem);
   line-height:1.42;color:var(--rose);max-width:26ch;margin:clamp(28px,4vw,42px) auto 0}
-.ways{margin-top:24px;font-size:.97rem;color:var(--ink-soft);max-width:46ch;margin-left:auto;margin-right:auto}
+.ways{margin-top:24px;font-size:.99rem;color:var(--ink-soft);max-width:48ch;margin-left:auto;margin-right:auto}
+.ways a{color:var(--rose-ink);border-bottom:1px solid var(--rose-ink);padding-bottom:1px;
+  font-weight:500;transition:opacity .3s var(--ease)}
+.ways a:hover{opacity:.7}
 .reassure{margin-top:32px;font-size:1rem;color:var(--ink-soft);max-width:40ch;margin-left:auto;margin-right:auto}
 
 .mail{border-top:1px solid var(--line);padding-top:clamp(40px,6vw,64px);margin-top:clamp(56px,8vw,96px);text-align:center}
@@ -315,6 +320,9 @@ footer .m{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacin
   .js .rv,.js .zm{opacity:1;transform:none;clip-path:none}
 }
 @media(max-width:900px){
+  .eyebrow{font-size:12.5px;letter-spacing:.2em}
+  .voice q{font-size:clamp(1.7rem,7vw,2.2rem)}
+  .voice cite{font-size:1.02rem}
   .promiseband{min-height:0;text-align:center}
   .promiseband::after{background:rgba(250,246,239,.80)}
   .promisetext{max-width:none;margin:0 auto}
@@ -345,10 +353,11 @@ footer .m{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacin
   <div class="wrap">
     <p class="eyebrow rv" data-en="Personalised songs in Greek and English">Προσωποποιημένα τραγούδια στα ελληνικά και στα αγγλικά</p>
     <h1 class="rv" data-en="I create songs <em>for the people you love.</em>">Γράφω τραγούδια <em>για τους ανθρώπους που αγαπάς.</em></h1>
-    <p class="sub rv" data-en="You tell me who they are — in your own words, however it comes out. I find the song hiding inside them.">Μου λες ποιοι είναι — με δικά σου λόγια, όπως σου βγαίνει. Εγώ βρίσκω το τραγούδι που κρύβεται μέσα τους.</p>
+    <p class="sub rv" data-en="You tell me who they are — in your own words, however it comes out. I find the song hiding inside them. In 48 hours, they hear it for the first time.">Μου λες ποιοι είναι — με δικά σου λόγια, όπως σου βγαίνει. Εγώ βρίσκω το τραγούδι που κρύβεται μέσα τους. Σε 48 ώρες, το ακούνε για πρώτη φορά.</p>
+    <p class="facts rv" data-en="Greek &amp; English · Ready in 48 hours · €85">Ελληνικά &amp; Αγγλικά · Έτοιμο σε 48 ώρες · 85€</p>
     <div class="heroacts rv">
       <a class="btn light" href="https://ig.me/m/studiobymaggie" data-en="Tell me their story">Πες μου την ιστορία τους</a>
-      <a class="tlink" href="https://www.youtube.com/watch?v=w1t0_EunAYs" target="_blank" rel="noopener" data-en="Listen to a real song">Άκου ένα αληθινό τραγούδι</a>
+      <a class="tlink" href="#akou" data-en="Listen to a real song">Άκου ένα αληθινό τραγούδι</a>
     </div>
   </div>
 </header>
@@ -357,8 +366,8 @@ footer .m{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacin
 <section class="statement center">
   <div class="wrap">
     <p class="eyebrow rv" data-en="WHY A SONG">ΓΙΑΤΙ ΕΝΑ ΤΡΑΓΟΥΔΙ</p>
-    <h2 class="rv" style="margin-top:26px" data-en="You know what you want to say to them. You just never found the way.">Ξέρεις τι θέλεις να τους πεις. Απλώς δεν βρήκες ποτέ τον τρόπο.</h2>
-    <p class="lede rv" data-en="You think about it every time their day comes around. You buy something lovely, you write two lines in a card — and you know you didn't say the thing you meant. It isn't that you don't have the words. The most important things are exactly the ones that will not come out loud.">Το σκέφτεσαι κάθε φορά που πλησιάζει η μέρα τους. Αγοράζεις κάτι ωραίο, γράφεις δυο γραμμές σε μια κάρτα — και ξέρεις ότι δεν είπες αυτό που εννοούσες. Δεν είναι ότι δεν έχεις τα λόγια. Τα πιο σημαντικά πράγματα είναι ακριβώς αυτά που δεν βγαίνουν δυνατά.</p>
+    <h2 class="rv" style="margin-top:26px" data-en="They will forget the gift within a year. They will still be playing the song in ten.">Το δώρο θα το ξεχάσουν σε έναν χρόνο. Το τραγούδι θα το ακούνε σε δέκα.</h2>
+    <p class="lede rv" data-en="Flowers, a beautiful box, something you chose with care — and within a few months nobody remembers what it was. A song doesn&#x27;t get used up. They play it on the next birthday, and the one after that. And there is no second one like it anywhere in the world, because it was written for one person only.">Λουλούδια, ένα ωραίο κουτί, κάτι που διάλεξες με αγάπη — και σε λίγους μήνες κανείς δεν θυμάται τι ήταν. Ένα τραγούδι δεν τελειώνει. Το βάζουν στα επόμενα γενέθλια, και στα μεθεπόμενα. Και δεν υπάρχει δεύτερο ίδιο πουθενά στον κόσμο — γιατί γράφτηκε για έναν άνθρωπο μόνο.</p>
   </div>
 </section>
 
@@ -404,7 +413,7 @@ footer .m{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacin
 
 
 <!-- ══ PROOF: actually hear them ══ -->
-<section class="band">
+<section class="band" id="akou">
   <div class="wrap">
     <div class="tight center">
       <p class="eyebrow rv" data-en="LISTEN">ΑΚΟΥ</p>
@@ -612,9 +621,9 @@ footer .m{font-family:var(--sans);font-size:11.5px;font-weight:500;letter-spacin
       <p class="echo" id="echo"></p>
     </div>
     <p style="margin-top:40px"><a class="btn rv" id="cta" href="https://ig.me/m/studiobymaggie" data-en="Tell me about them">Πες μου γι' αυτούς</a></p>
-    <p class="giver rv" data-en="They will remember who gave it to them for the rest of their life. That is really what you are buying.">Θα θυμούνται ποιος τους το χάρισε για την υπόλοιπη ζωή τους. Αυτό αγοράζεις στ’ αλήθεια.</p>
+    <p class="giver rv" data-en="They will remember who gave it to them for the rest of their life.">Θα θυμούνται ποιος τους το χάρισε για την υπόλοιπη ζωή τους.</p>
     <p class="reassure rv" data-en="You don't need to know what to write. Start with their name — I'll ask you five questions, we'll agree the day, and you'll have it within 48 hours.">Δεν χρειάζεται να ξέρεις τι να γράψεις. Ξεκίνα με το όνομά τους — θα σου κάνω πέντε ερωτήσεις, θα συμφωνήσουμε τη μέρα, και θα το έχεις μέσα σε 48 ώρες.</p>
-    <p class="ways rv" data-en="Not on Instagram? Write to me at maggieloutraki@gmail.com, or on WhatsApp and Viber: 6970 053 849. It is me answering, every time.">Δεν είσαι στο Instagram; Γράψε μου στο maggieloutraki@gmail.com, ή στο WhatsApp και Viber: 6970 053 849. Απαντάω εγώ, κάθε φορά.</p>
+    <p class="ways rv" data-en="Not on Instagram? Write to me on &lt;a href='https://wa.me/306970053849?text=Hi%20Maggie%21%20I%27d%20like%20a%20song%20for%20' target='_blank' rel='noopener'&gt;WhatsApp&lt;/a&gt;, &lt;a href='viber://chat?number=%2B306970053849'&gt;Viber&lt;/a&gt; or &lt;a href='mailto:maggieloutraki@gmail.com'&gt;email&lt;/a&gt;. It is me answering, every time.">Δεν είσαι στο Instagram; Γράψε μου στο <a href="https://wa.me/306970053849?text=%CE%93%CE%B5%CE%B9%CE%B1%20%CF%83%CE%BF%CF%85%20Maggie%21%20%CE%98%CE%B1%20%CE%AE%CE%B8%CE%B5%CE%BB%CE%B1%20%CE%AD%CE%BD%CE%B1%20%CF%84%CF%81%CE%B1%CE%B3%CE%BF%CF%8D%CE%B4%CE%B9%20%CE%B3%CE%B9%CE%B1%20" target="_blank" rel="noopener">WhatsApp</a>, <a href="viber://chat?number=%2B306970053849">Viber</a> ή <a href="mailto:maggieloutraki@gmail.com">email</a>. Απαντάω εγώ, κάθε φορά.</p>
 
     <div class="mail rv">
       <h3 data-en="Don&#x27;t know what to say?">Δεν ξέρεις τι να πεις;</h3>
